@@ -57,3 +57,9 @@ body {
     width: 100%;
     margin-top: -5em;
 }
+
+/* Checkout */
+.col-md-2 {
+    border: 2px solid black;
+    border-radius: 5px;
+}
