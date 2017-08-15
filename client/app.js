@@ -24,20 +24,23 @@ app.config(function($routeProvider) {
     .run(function($rootScope){
         $rootScope.api = "http://iambham-store-dev.us-east-1.elasticbeanstalk.com/api/v1/";
 });
+    
+var filter = 'f034a4de-8143-11e7-8e40-12dbaf53d968';
 
 app.controller("ApparelController", ['$rootScope', '$http', '$scope', '$location', function($rootScope, $http, $scope, $location){
     console.log('in apparel controller');
+    var category = $location.search().category;
+    console.log(category);
     $http.get('http://iambham-store-dev.us-east-1.elasticbeanstalk.com/api/v1/products/all',{
         headers: {
-            'Filter': 'f034a4de-8143-11e7-8e40-12dbaf53d968'}
+            'Filter': filter}
     })
     .then(function(response){
         console.log(response.data.data);
         $scope.merchandise = response.data.data;
         $scope.merchandise.forEach(function(data){
-            if(data.category === "apparel"){
-                $scope.apparel = data;
-                console.log($scope.apparel);
+            if(data.category == category){
+                console.log(data);
             }
         })
     })
