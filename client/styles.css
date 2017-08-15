@@ -2,7 +2,6 @@ body {
     background-color: grey;
 }
 
-
 /*********Index.html Fixed Items**********/
 /* Navbar */
 .navbar-inverse {
@@ -46,7 +45,13 @@ body {
     border-color: #4CB5C6;
     height: 52px;
 }
-
-.welcome {
-    /* background-image: url("../assets/covalence-store-home.jpg"); */
-}
+/* Apparel */
+/* img .apparel {
+    max-width: 150px;
+    max-height: 100px;
+    background-image: url("../assets/covalence-store-apparel-hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    margin-top: -5em;
+} */
