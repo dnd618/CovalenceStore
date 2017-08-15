@@ -14,6 +14,9 @@ app.config(function($routeProvider) {
     .when("/checkout", {
         templateUrl: "../client/views/checkout.html",
     })
+    .when("/single", {
+        templateUrl: "../client/views/single.html",
+    })
     .when("/invoice", {
         templateUrl: "../client/views/invoice.html"
     });
