@@ -12,9 +12,20 @@ app.config(function($routeProvider) {
         templateUrl: "../client/views/misc.html",
     })
     .when("/checkout", {
-        templateUrl: "../client/views/misc.html",
+        templateUrl: "../client/views/checkout.html",
     })
     .when("/invoice", {
         templateUrl: "../client/views/invoice.html"
-    })
+    });
 })
+    .run(function($rootScope){
+        $rootScope.api = "http://iambham-store-dev.us-east-1.elasticbeanstalk.com/api/v1/";
+});
+
+app.controller("ApparelController", ['$rootScope', '$http', '$scope', '$location', function($rootScope, $http, $scope, $location){
+    console.log('in apparel controller');
+    $http({
+        method: 'GET', url: 'www.google.com/someapi', headers: {
+    'Authorization': 'Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ=='}
+});
+}])
