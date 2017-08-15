@@ -33,5 +33,12 @@ app.controller("ApparelController", ['$rootScope', '$http', '$scope', '$location
     })
     .then(function(response){
         console.log(response.data.data);
+        $scope.merchandise = response.data.data;
+        $scope.merchandise.forEach(function(data){
+            if(data.category === "apparel"){
+                $scope.apparel = data;
+                console.log($scope.apparel);
+            }
+        })
     })
 }])
