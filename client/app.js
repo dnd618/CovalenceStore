@@ -28,10 +28,10 @@ app.config(function($routeProvider) {
 var filter = 'f034a4de-8143-11e7-8e40-12dbaf53d968';
 
 app.controller("MerchandiseController", ['$rootScope', '$http', '$scope', '$location', function($rootScope, $http, $scope, $location){
-    console.log('in apparel controller');
+    console.log('in merch controller');
     var category = $location.search().category;
     console.log(category);
-    $http.get('http://iambham-store-dev.us-east-1.elasticbeanstalk.com/api/v1/products/all',{
+    $http.get($rootScope.api + 'products/all',{
         headers: {
             'Filter': filter}
     })
@@ -44,4 +44,22 @@ app.controller("MerchandiseController", ['$rootScope', '$http', '$scope', '$loca
             }
         })
     })
+    .catch(function(error){
+        alert('Uh oh! Please refresh the page.');
+    })
+    $scope.singlePath = function(id){
+        $location.path('/single/' + id)
+    };
+}])
+
+app.controller("SingleController", ['$rootScope', '$http', '$scope', '$location', '$routeParams', function($rootScope, $http, $scope, $location, $routeParams){
+    console.log("in single controller");
+    id = $routeParams.id; 
+    $http.get($rootScope.api + 'products/one/' + id,{
+        headers: {
+            'Filter': filter}
+        })
+        .then(function(response){
+            $scope.oneItem = response.data;
+        })
 }])
