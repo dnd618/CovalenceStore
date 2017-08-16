@@ -67,4 +67,20 @@ app.controller("SingleController", ['$rootScope', '$http', '$scope', '$location'
             $scope.oneItem = response.data.data;
             console.log($scope.oneItem);
         })
+	$scope.saved = localStorage.getItem('items');
+	$scope.items = (localStorage.getItem('items')!==null) ? JSON.parse($scope.saved) : [ {name: 'Hey buy me', price: 3000}];
+	localStorage.setItem('items', JSON.stringify($scope.items));
+	$scope.addToCart = function() {
+		// $scope.items.push({
+		// 	name: $scope.name,
+		// 	price: $scope.price
+		// });
+        localStorage.setItem('items', JSON.stringify($scope.items));
+        console.log(localStorage);
+	};
 }])
+// shopcart add 
+app.controller("ShoppingController", ['scope', function($scope) {
+
+
+}]);
