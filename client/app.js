@@ -27,7 +27,7 @@ app.config(function($routeProvider) {
     
 var filter = 'f034a4de-8143-11e7-8e40-12dbaf53d968';
 
-app.controller("ApparelController", ['$rootScope', '$http', '$scope', '$location', function($rootScope, $http, $scope, $location){
+app.controller("MerchandiseController", ['$rootScope', '$http', '$scope', '$location', function($rootScope, $http, $scope, $location){
     console.log('in apparel controller');
     var category = $location.search().category;
     console.log(category);
