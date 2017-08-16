@@ -60,6 +60,7 @@ app.controller("SingleController", ['$rootScope', '$http', '$scope', '$location'
             'Filter': filter}
         })
         .then(function(response){
-            $scope.oneItem = response.data;
+            $scope.oneItem = response.data.data;
+            console.log($scope.oneItem);
         })
 }])
