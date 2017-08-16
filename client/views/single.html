@@ -1,3 +1,24 @@
 <div ng-controller="SingleController">
     
+
+
+
+
+<div class="jumbotron contacttron">
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img ng-src="../../assets/{{ oneItem.image }}" class="img-thumbnail">
+                    <h1 class="item-detail">{{ oneItem.title }}</h1><br/>
+                    <p class="item-detail">{{ oneItem.description }}</p>
+                    <p class="item-detail">{{ oneItem.price | currency:"$":0 }}</p>
+                    <div class="text-center">
+                    <button ng-click="addToCart(item)" class="btn btn-warning center">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
