@@ -11,9 +11,11 @@
 </head>
 <body>
     <!--NavBar-->
-    <nav class="navbar navbar-inverse">
-        <a href="#/"><img class="navbar-logo" src="../assets/Newlogo.png" height= "28px" width= "150px"></a>
+    <nav class="navbar navbar-inverse fixed">
+        <!-- <a href="#/"><img class="navbar-logo" src="../assets/Newlogo.png" height= "28px" width= "150px"></a> -->
         <ul class="nav navbar-nav">
+            <li><a href="#/"><img class="navbar-logo" src="../assets/Newlogo.png" height= "28px" width= "150px"></a></li>
+            <li><p class="bar"> | </p>
             <li><a href="#/apparel?category=apparel">APPAREL</a></li>
             <li><a href="#/misc?category=misc">MISC</a></li>
             <li><a href="#">Cart</a></li>
@@ -24,8 +26,9 @@
     </div>
     <!--Footer-->
     <!-- Move logo inside of footer -->
-    <img src="../assets/Newlogo.png" height= "28px" width= "150px">
-        <div class="panel-footer">Copyright Covalence LLC</div>
+        <div class="panel-footer">
+            <img class="footer-logo" src="../assets/logo-footer.svg" height= "28px" width= "150px">
+                <p class="footer-text">Copyright Covalence LLC</p></div>
 </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
