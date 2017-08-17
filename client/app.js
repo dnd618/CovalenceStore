@@ -41,10 +41,12 @@ app.controller("MerchandiseController", ['$rootScope', '$http', '$scope', '$loca
     })
     .then(function(response){
         console.log(response.data.data);
+        var merch = [];
         $scope.merchandise = response.data.data;
         $scope.merchandise.forEach(function(data){
             if(data.category == category){
                 console.log(data);
+                merch.push(data);
             }
         })
     })
@@ -67,20 +69,51 @@ app.controller("SingleController", ['$rootScope', '$http', '$scope', '$location'
             $scope.oneItem = response.data.data;
             console.log($scope.oneItem);
         })
-	$scope.saved = localStorage.getItem('items');
-	$scope.items = (localStorage.getItem('items')!==null) ? JSON.parse($scope.saved) : [ {name: 'Hey buy me', price: 3000}];
-	localStorage.setItem('items', JSON.stringify($scope.items));
-	$scope.addToCart = function() {
-		// $scope.items.push({
-		// 	name: $scope.name,
-		// 	price: $scope.price
-		// });
-        localStorage.setItem('items', JSON.stringify($scope.items));
+
+
+
+
+
+
+ // for initializing localstorage 
+    $scope.emptyStorage = function(){
+        localStorage.clear();
+        console.log('clicked');
         console.log(localStorage);
-	};
+    };
+    $scope.initializeStorage = function(){
+        var a = [];
+        localStorage.setItem('session', JSON.stringify(a));
+        console.log(localStorage);
+    }
+// sends items to storage
+    $scope.saveToCart = function(data){
+        a = JSON.parse(localStorage.getItem('session'));
+        a.push(data);
+        localStorage.setItem('session', JSON.stringify(a));
+        console.log(localStorage);
+        var myobj = JSON.parse(localStorage.getItem('session'));
+        console.log(myobj);
+        console.log(localStorage);
+    }
 }])
+
+
 // shopcart add 
-app.controller("ShoppingController", ['scope', function($scope) {
+app.controller("ShoppingController", ['$scope', '$location', function($scope, $location) {
+    console.log('in shopping cart');
+    console.log(localStorage);
+    $scope.myobj = JSON.parse(localStorage.getItem('session'));
+    console.log($scope.myobj);
+    var total = 0;
+    $scope.myobj.forEach(function(item){
+        if(item.price !== null){
+            total += item.price;
+        }
+    })
+    console.log(total);
 
-
+    $scope.checkout = function(){
+        $location.path("/checkout");
+    }
 }]);
