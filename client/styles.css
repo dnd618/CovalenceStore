@@ -136,13 +136,42 @@ img {
 }
 
 /* Checkout */
-/* .col-md-2 {
-    border: 2px solid black;
-    border-radius: 5px;
-}
 .form-control {
-    width: 25%;
-} */
+    background-color: lightgrey;
+}
+#useremail {
+    width: 33%;
+    margin-left: 110px;
+}
+#firstname1 {
+    margin-left: 27px;
+}
+#inputcompany {
+    margin-left: 110px;
+}
+#address1 {
+    margin-left: 23px;
+}
+#namelabel {
+    margin-left: 40px;
+}
+#addresslabel {
+    margin-left: 28px;
+}
+#cityinput {
+    margin-left: 110px;
+}
+#zipcode {
+    margin-left: 110px;
+}
+#cCard {
+    width: 33%;
+    margin-left: 110px;
+}
+#expirationlabel {
+    margin-left: 40px; 
+}
+
 
 /* Shopping Cart  */
 #shopping-cart{

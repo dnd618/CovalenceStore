@@ -1,73 +1,47 @@
-<h1> Your Email </h1>
-
-<div class="form-group">
-    <label class="sr-only" for="exampleInputEmail3">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="form-groupone">
-    <label for="usr">1 Your Email</label>
-    <input type="text" class="form-control" id="usr" placeholder="you@email.com">
+<h3>1 Your Email</h3>
+<div class="form-groupone">
+    <input type="text" class="form-control" id="useremail" placeholder="you@email.com">
 </div>
 
 <h3>2 Your Billing Address</h3>
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <label for="firstn">First</label>
-            <input type="text" class="form-control" id="firstn">
-                <span class="form-control-static">Name</span> 
-        </div>
-        <div class="col">
-            <label for="lastn">Last</label>
-            <input type="text" class="form-control" id="lastn">
-        </div>
+<form class="form-inline">
+    <div class="form-group">
+        <label for="firstname1" id="namelabel">Name</label>
+        <input type="text" class="form-control" id="firstname1" placeholder="First">
     </div>
-</div>
+    <div class="form-group">
+        <input type="text" class="form-control" id="lastname1" placeholder="Last">
+    </div>
+</form>
 
-<div class="container">
-    <div class="row">
-        <div class="form-groupfour">
-            <label for="company">Company(Optional)</label>
-            <input type="text" class="form-control" id="company">
-        </div>
-        <div class="form-groupfive">
-            <label for="phone">Phone #</label>
-            <input type="text" class="form-control" id="phone">
-        </div>
+<form class="form-inline">
+    <div class="form-group">
+        <input type="text" class="form-control" id="inputcompany" placeholder="Company(Optional)">
     </div>
-</div>
-    
-<h3>Address</h3>
-<div class="form-groupsix">
-    <label for="addressone">Address 1</label>
-    <input type="text" class="form-control" id="addressone">
-</div>
-          
-<div class="form-groupseven">
-    <label for="addresstwo">Address 2(Optional)</label>
-    <input type="text" class="form-control" id="addresstwo">
-</div>
+    <div class="form-group">
+        <label class="sr-only" for="inputpass">Password</label>
+        <input type="text" class="form-control" id="inputpass" placeholder="Phone">
+    </div>
+</form>
+
+</br>
+
+<form class="form-inline">
+    <div class="form-group">
+        <label for="adress1" id="addresslabel">Address</label>
+        <input type="text" class="form-control" id="address1" placeholder="Address 1">
+    </div>
+    <div class="form-group">
+        <label class="sr-only" for="address2">Password</label>
+        <input type="text" class="form-control" id="address2" placeholder="Address 2(Optional)">
+    </div>
+</form>
         
-<div class="form-groupeight">
-    <label for="city">City</label>
-    <input type="text" class="form-control" id="city">
+<form class="form-inline">
+    <div class="form-group">
+    <input type="text" class="form-control" id="cityinput" placeholder="City">
 </div>
-        
 <div class="form-group">
-    <label for="state" class="col-sm-2 control-label">State</label>
     <div class="col-sm-10">
         <select class="form-control" id="state" name="state">
             <option value="AL">Alabama</option>
@@ -83,41 +57,45 @@
         </select>
     </div>
 </div>
+</form>
 
-<div class="form-groupnine">
-    <label for="zipcode">Zip Code</label>
-     <input type="text" class="form-control" id="zipcode">
-</div>
+<form class="form-inline">
+    <div class="form-group">
+        <input type="text" class="form-control" id="zipcode" placeholder="Zip Code">
+    </div>
 
 <div class="form-group">
-    <label for="country" class="col-sm-2 control-label">Country</label>
-    <div class="col-sm-10">
-        <select class="form-control" id="country" name="country">
-            <option value="US">United States</option>
-            <option value="AF">Afghanistan</option>
-            <option value="AX">Åland Islands</option>
-            <option value="AL">Albania</option>
-            <option value="DZ">Algeria</option>
-            <option value="AS">American Samoa</option>
-            <option value="AD">Andorra</option>
-            <option value="AO">Angola</option>
-            <option value="AI">Anguilla</option>
-            <option value="AQ">Antarctica</option>
-            <option value="AG">Antigua and Barbuda</option>
-            <option value="AR">Argentina</option>
-            <option value="AM">Armenia</option>
-            <option value="AW">Aruba</option>
-        </select>
+        <div class="col-sm-10">
+            <select class="form-control" id="country" name="country">
+                <option value="US">United States</option>
+                <option value="AF">Afghanistan</option>
+                <option value="AX">Åland Islands</option>
+                <option value="AL">Albania</option>
+                <option value="DZ">Algeria</option>
+                <option value="AS">American Samoa</option>
+                <option value="AD">Andorra</option>
+                <option value="AO">Angola</option>
+                <option value="AI">Anguilla</option>
+                <option value="AQ">Antarctica</option>
+                <option value="AG">Antigua and Barbuda</option>
+                <option value="AR">Argentina</option>
+                <option value="AM">Armenia</option>
+                <option value="AW">Aruba</option>
+            </select>
+        </div>
     </div>
-</div>
+</form>
 
-<h3>Payment Method</h3>
+<h3>3 Payment Method</h3>
 <div class="bs-example">
     <form>
         <div class="form-group">
             <input type="ccard" class="form-control" id="cCard" placeholder="Card #">
         </div>
     </form>
+
+    <form class="form-inline">
+    <label for="expiration" id="expirationlabel">Expiration</label>
     <select name="Day">
         <option> - Day - </option>
         <option value="1">1</option>
@@ -178,7 +156,9 @@
         <option value="1978">1978</option>
         <option value="1977">1977</option>
     </select>
+    <input type="email" class="form-control" id="cscinput" placeholder="CSC">
 </div>
+</form>
 
 
 <section id="shoppingcart">
@@ -189,5 +169,5 @@
 </section>
 
 <h2>Almost done! Click the submit button to process your payment.</h2>
-<button type="submit" class="btn btn-primary">Submit Your Button</button> -->
+<button type="submit" class="btn btn-primary">Submit Your Button</button>
 
