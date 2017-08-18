@@ -4,9 +4,11 @@
 
 <div class="container">
     <div class="apps row">
-        <div ng-repeat="items in merch"class="col-md-3">
+        <div ng-repeat="items in merch"class="col-md-8">
+            <img ng-src="../../assets/{{items.image}}">
             <p>{{ items.name }}</p><br/>
             <p>{{ items.price }}</p>
+            <p>in the misc page</p>
         </div>
     </div>
 </div>

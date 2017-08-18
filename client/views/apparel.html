@@ -1,4 +1,16 @@
 <div ng-controller="MerchandiseController">
          <img src="../assets/covalence-store-apparel-hero.jpg" class="apparel-header" style="width:100%;"> 
-</div>
 
+
+
+<div class="">
+    <div class="row">
+        <div ng-repeat="items in merch"class="col-md-4">
+           <img ng-src="../../assets/{{ items.image }}">
+            <p>{{ items.name }}</p><br/>
+            <p>{{ items.price | currency:"$":0 }}</p>
+            <p>In my apparel page</p>
+        </div>
+    </div>
+</div>
+</div>
