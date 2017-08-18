@@ -1,20 +1,13 @@
 <div ng-controller="MerchandiseController">
     <img src="../assets/covalence-store-misc-hero.jpg" class="misc-header" style="width:100%;"> 
-</div>
 
-<!-- <div class="jumbotron misctron">
-    <div class="container">
 
-    </div>
-</div> -->
-
-<div class="bgc container">
+<div class="container">
     <div class="apps row">
-        <div ng-repeat="m in misc"class="col-md-3 apps">
-            <a ng-href="/products/{{ m.product_id }}"><img class="img-thumbnail" ng-src="{{ m.imageurl }}"></a>
-            <p>{{ m.title }}</p><br/>
-            <p>{{ m.price | currency:"$":0 }}</p>
-            <button type="button" ng-click="addToCart(m)" class="btn btn-warning">Add to Cart</button>
+        <div ng-repeat="items in merch"class="col-md-3">
+            <p>{{ items.name }}</p><br/>
+            <p>{{ items.price }}</p>
         </div>
     </div>
+</div>
 </div>

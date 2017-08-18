@@ -35,20 +35,21 @@ app.controller("MerchandiseController", ['$rootScope', '$http', '$scope', '$loca
     console.log('in merch controller');
     var category = $location.search().category;
     console.log(category);
+     $scope.merch = [];
     $http.get($rootScope.api + 'products/all',{
         headers: {
             'Filter': filter}
     })
     .then(function(response){
         console.log(response.data.data);
-        var merch = [];
         $scope.merchandise = response.data.data;
         $scope.merchandise.forEach(function(data){
             if(data.category == category){
                 console.log(data);
-                merch.push(data);
+                $scope.merch.push(data);
             }
         })
+        console.log($scope.merch);
     })
     .catch(function(error){
         alert('Uh oh! Please refresh the page.');
@@ -105,13 +106,13 @@ app.controller("ShoppingController", ['$scope', '$location', function($scope, $l
     console.log(localStorage);
     $scope.myobj = JSON.parse(localStorage.getItem('session'));
     console.log($scope.myobj);
-    var total = 0;
+    $scope.total = 0;
     $scope.myobj.forEach(function(item){
         if(item.price !== null){
-            total += item.price;
+            $scope.total += item.price;
         }
     })
-    console.log(total);
+    console.log($scope.total);
 
     $scope.checkout = function(){
         $location.path("/checkout");

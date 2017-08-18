@@ -14,7 +14,9 @@
                     <p class="item-detail">{{ oneItem.description }}</p>
                     <p class="item-detail">{{ oneItem.price * .0100 | currency:"$":0 }}</p>
                     <div class="text-center">
-                    <button ng-click="addToCart()" class="btn btn-warning center">Add to cart</button>
+                    <button ng-click="saveToCart(oneItem)" class="btn btn-warning center">Add to cart</button>
+                    <button ng-click="emptyStorage()">EMPTY LOCAL STORAGE</button>
+                    <button ng-click="initializeStorage()">INITIALIZE STORAGE</button>
                     </div>
                 </div>
             </div>

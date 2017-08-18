@@ -125,3 +125,88 @@ img {
 .form-control {
     width: 25%;
 } */
+
+/* Shopping Cart  */
+#shopping-cart{
+    float: right;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 0px;
+    width: 400px;
+}
+.shopping-list>img{
+    margin-top: 0;
+}
+.cart-heading{
+    background-color: #4CB5C6;
+    height: 68px;
+    padding: 20px;
+    font-size: 16px;
+    color: white;
+}
+.panel-content{
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+.item-total{
+    color: #4CB5C6;
+}
+
+.shopping-list{
+    height: 50px;
+    margin-bottom: 15px;
+}
+ .item-names{
+    color: gray;
+} 
+#total-price{
+    display: inline;
+}
+.pull-right{
+    float: right;
+}
+.center-text{
+    text-align: center;
+}
+#checkout{
+    background-color: #4CB5C6;
+    width: 100%;
+    height: 68px;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 4px;
+}
+
+.item-remove{
+    color: red;
+    background-color: white;
+    border: none;
+    font-size: 10px;
+    padding: 6px;
+    display: block;
+}
+/* builds accordion */
+.collapse {
+  visibility: hidden;
+}
+.collapse.in {
+  visibility: visible;
+}
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition-property: height, visibility;
+  transition-property: height, visibility;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+.collapsing.width {
+  -webkit-transition-property: width, visibility;
+  transition-property: width, visibility;
+  width: 0;
+  height: auto;
+}

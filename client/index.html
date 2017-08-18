@@ -18,12 +18,39 @@
             <li><p class="bar"> | </p>
             <li><a href="#/apparel?category=apparel">APPAREL</a></li>
             <li><a href="#/misc?category=misc">MISC</a></li>
-            <li><a href="#">Cart</a></li>
+            <li data-toggle="collapse" data-target="#shopping-cart"><a>Cart</a></li>
         </ul>
     </nav>
     </div>
+
+
     <div ng-view>
     </div>
+
+
+    <!-- Sidebar  -->
+    <div id='shopping-cart' class="panel panel-default collapse in width" ng-controller="ShoppingController">
+        <div class="collapse in width">
+             <div class="cart-heading" data-toggle="collapse" data-target="#shopping-cart">
+                 <span>Close</span>
+            </div>
+            <div class="panel-content">
+                <h3>Your Shopping Cart</h3>
+                <div class="shopping-list" ng-repeat="item in myobj">
+                    <img ng-src="../../assets/{{ item.image }}" height="50px" width="60px">
+                    <span class="item-names">{{item.name}}</span>
+                    <span class="pull-right item-total">{{ item.price * .0100 | currency:"$":0 }}</span>
+                    <button class="item-remove">Remove</button>
+                </div>
+            <hr>
+            <h3 id="total-price">Total Price</h3>
+            <span class="pull-right">{{ total * .01 | currency:"$":0 }}</span>
+            <p class="center-text">Taxes and fees included at checkout.</p>
+            <button id="checkout" ng-click="checkout()">Check Out</button>
+            </div>
+        </div>
+    </div>
+    
     <!--Footer-->
     <!-- Move logo inside of footer -->
         <div class="panel-footer">
