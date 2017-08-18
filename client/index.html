@@ -32,7 +32,7 @@
 
 
     <!-- Sidebar  -->
-    <div id='shopping-cart' class="panel panel-default collapse in width" ng-controller="ShoppingController">
+    <div id='shopping-cart' class="panel panel-default collapse in width" ng-hide="hideCart" ng-controller="ShoppingController">
         <div class="collapse in width">
              <div class="cart-heading" data-toggle="collapse" data-target="#shopping-cart">
                  <span>Close</span>
@@ -57,7 +57,7 @@
     <!--Footer-->
     <!-- Move logo inside of footer -->
 
-    <div class="footer">
+    <div class="footer" ng-hide="hideFooter">
         <footer class="panel-footer">
             <img class="footer-logo" src="../assets/logo-footer.svg" height= "28px" width= "150px">
                 <p class="footer-text">Copyright Covalence LLC</p></footer>

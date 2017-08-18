@@ -29,11 +29,15 @@ app.config(function($routeProvider) {
     
 var filter = 'f034a4de-8143-11e7-8e40-12dbaf53d968';
 
-app.controller("HomeController", function(){
+app.controller("HomeController", ['$rootScope', function($rootScope){
     console.log("home controller");
-})
+    $rootScope.hideCart = true;
+    $rootScope.hideFooter = true;
+}])
 
 app.controller("MerchandiseController", ['$rootScope', '$http', '$scope', '$location', function($rootScope, $http, $scope, $location){
+    $rootScope.hideCart = false;
+    $rootScope.hideFooter = false;
     console.log('in merch controller');
     var category = $location.search().category;
     console.log(category);
@@ -62,6 +66,8 @@ app.controller("MerchandiseController", ['$rootScope', '$http', '$scope', '$loca
 }])
 
 app.controller("SingleController", ['$rootScope', '$http', '$scope', '$location', '$routeParams', function($rootScope, $http, $scope, $location, $routeParams){
+    $rootScope.hideCart = false;
+    $rootScope.hideFooter = false;
     console.log("in single controller");
     id = $routeParams.id; 
     $http.get($rootScope.api + 'products/one/' + id,{
@@ -104,6 +110,8 @@ app.controller("SingleController", ['$rootScope', '$http', '$scope', '$location'
 
 // shopcart add 
 app.controller("ShoppingController", ['$rootScope', '$scope', '$location', function($rootScope, $scope, $location) {
+    $rootScope.hideCart = false;
+    $rootScope.hideFooter = false;
     console.log('in shopping cart');
     console.log($rootScope.cart);
     console.log(localStorage);
@@ -126,3 +134,10 @@ app.controller("ShoppingController", ['$rootScope', '$scope', '$location', funct
     }
 
 }]);
+
+
+// Checkout Controller
+app.controller("CheckoutController", ['$rootScope', function($rootScope){
+    $rootScope.hideCart = true;
+    $rootScope.hideFooter = false;
+}])
