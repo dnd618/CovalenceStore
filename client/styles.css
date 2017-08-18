@@ -44,9 +44,13 @@ body {
     height: auto;
 } */
 
-.navbar-nav li a 
-    {
-    font-family: 'Ubuntu', sans-serif;
+.navbar-nav li a {
+    margin-right: 2em;
+    font-family: 'Ubuntu', sans-serif;		    
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    color: #4CB5C6;
 }
 
 .navbar-logo {
@@ -71,6 +75,8 @@ body {
 }
 
 .greeting   {  
+	margin-left: 4em;
+    margin-top: 8em;
     font-size: 32px;
     color: white;
     font-family: 'Ubuntu', sans-serif;
@@ -84,6 +90,7 @@ body {
 }
 
 .btn-primary {
+    margin-left: 7em;
     font-family: 'Ubuntu', sans-serif;
     width: 165px;
     color: #fff;
