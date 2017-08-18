@@ -23,6 +23,8 @@ app.config(function($routeProvider) {
 })
     .run(function($rootScope){
         $rootScope.api = "http://iambham-store-dev.us-east-1.elasticbeanstalk.com/api/v1/";
+        $rootScope.cart = JSON.parse(localStorage.getItem('session'));
+        $rootScope.total = 0;
 });
     
 var filter = 'f034a4de-8143-11e7-8e40-12dbaf53d968';
@@ -84,39 +86,43 @@ app.controller("SingleController", ['$rootScope', '$http', '$scope', '$location'
         console.log(localStorage);
     }
 // sends items to storage
-    $scope.saveToCart = function(data){
-        a = JSON.parse(localStorage.getItem('session'));
-        a.push(data);
-        localStorage.setItem('session', JSON.stringify(a));
-        console.log(localStorage);
-        var myobj = JSON.parse(localStorage.getItem('session'));
-        console.log(myobj);
-        console.log(localStorage);
+    $scope.saveToCart = function(data, item){
+        $rootScope.cart.push(data);
+        localStorage.setItem('session', JSON.stringify($rootScope.cart));
+        if($rootScope.total === 0){
+            $rootScope.cart.forEach(function(item){
+                if(item.price !== null){
+                    $rootScope.total += item.price;
+                }
+            })
+        } else{
+            $rootScope.total +=item.price;
+        }
     }
 }])
 
 
 // shopcart add 
-app.controller("ShoppingController", ['$scope', '$location', function($scope, $location) {
+app.controller("ShoppingController", ['$rootScope', '$scope', '$location', function($rootScope, $scope, $location) {
     console.log('in shopping cart');
+    console.log($rootScope.cart);
     console.log(localStorage);
-    $scope.myobj = JSON.parse(localStorage.getItem('session'));
-    console.log($scope.myobj);
-    $scope.total = 0;
-    $scope.myobj.forEach(function(item){
-        if(item.price !== null){
-            $scope.total += item.price;
-        }
-    })
-    console.log($scope.total);
+
+    console.log($rootScope.total);
 
     $scope.checkout = function(){
         $location.path("/checkout");
     }
 
     $scope.removeItem = function(index){
-        $scope.myobj.splice(index, 1);
-        localStorage.setItem('session', JSON.stringify($scope.myobj));
+        $rootScope.cart.splice(index, 1);
+        localStorage.setItem('session', JSON.stringify($rootScope.cart));
+        console.log(localStorage);
+        $rootScope.cart.forEach(function(item){
+            if(item.price !== null){
+                $rootScope.total -= item.price;
+            }
+        })
     }
 
 }]);

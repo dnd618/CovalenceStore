@@ -20,6 +20,7 @@
             <li><a href="#/misc?category=misc">MISC</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/invoice">Invoices</a></li>
             <li data-toggle="collapse" data-target="#shopping-cart"><a>Cart</a></li>
         </ul>
     </nav>
@@ -38,7 +39,7 @@
             </div>
             <div class="panel-content">
                 <h3>Your Shopping Cart</h3>
-                <div class="shopping-list" ng-repeat="item in myobj">
+                <div class="shopping-list" ng-repeat="item in cart track by $index">
                     <img ng-src="../../assets/{{ item.image }}" height="50px" width="60px">
                     <span class="item-names">{{item.name}}</span>
                     <span class="pull-right item-total">{{ item.price * .0100 | currency:"$":0 }}</span>
