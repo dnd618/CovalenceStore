@@ -72,10 +72,6 @@ app.controller("SingleController", ['$rootScope', '$http', '$scope', '$location'
         })
 
 
-
-
-
-
  // for initializing localstorage 
     $scope.emptyStorage = function(){
         localStorage.clear();
@@ -117,4 +113,10 @@ app.controller("ShoppingController", ['$scope', '$location', function($scope, $l
     $scope.checkout = function(){
         $location.path("/checkout");
     }
+
+    $scope.removeItem = function(index){
+        $scope.myobj.splice(index, 1);
+        localStorage.setItem('session', JSON.stringify($scope.myobj));
+    }
+
 }]);

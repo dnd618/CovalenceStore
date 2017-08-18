@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/kbf17/CovalenceStore#readme",
   "dependencies": {
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "httpserver": "^0.3.0"
   }
 }

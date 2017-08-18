@@ -40,7 +40,7 @@
                     <img ng-src="../../assets/{{ item.image }}" height="50px" width="60px">
                     <span class="item-names">{{item.name}}</span>
                     <span class="pull-right item-total">{{ item.price * .0100 | currency:"$":0 }}</span>
-                    <button class="item-remove">Remove</button>
+                    <button class="item-remove" ng-click="removeItem($index)">Remove</button>
                 </div>
             <hr>
             <h3 id="total-price">Total Price</h3>
