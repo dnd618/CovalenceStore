@@ -4,6 +4,12 @@
   margin-top: -9em;
   width: 100%;
 }
+
+img {
+    width: 205px;
+    vertical-align: middle;
+    height: 188px;
+}
 /* Welcome */
 .welcome {
   margin-top: 24em;
@@ -14,7 +20,7 @@
   margin-top: 8em;
   font-size: 32px;
   color: white;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Lato:700', sans-serif;
 }
 .btn-lg {
   padding: 10px 16px;
@@ -24,7 +30,7 @@
 }
 .btn-primary {
   margin-left: 7em;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Lato:700', sans-serif;
   width: 165px;
   color: #fff;
   background-color: #4CB5C6;
@@ -40,7 +46,7 @@
 /* Shopping Cart  */
 #shopping-cart {
   float: right;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Lato:700', sans-serif;
   padding: 0px;
   width: 400px;
 }

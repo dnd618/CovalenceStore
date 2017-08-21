@@ -29,8 +29,13 @@ app.config(function($routeProvider) {
     
 var filter = 'f034a4de-8143-11e7-8e40-12dbaf53d968';
 
+
+
+
+
 app.controller("HomeController", ['$rootScope', function($rootScope){
     console.log("home controller");
+    image: 'http://' + $location.host() + 'assets/covalence-store-misc-hero.jpg',
     $rootScope.hideCart = true;
     $rootScope.hideFooter = true;
 }])
