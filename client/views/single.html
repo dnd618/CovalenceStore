@@ -3,15 +3,37 @@
     <div class="row">
         <div class="col-md-6">
             <img ng-src="../../assets/{{ oneItem.image }}" class="product-image">
+        </div>
+            
+            <h1 class="product-price">{{ oneItem.price * .0100 | currency:"$":0 }}</h1>
             <h1 class="product-title">{{ oneItem.title }}</h1><br/>
-            <p class="product-detail">{{ oneItem.description }}</p>
-            <p class="product-price">{{ oneItem.price * .0100 | currency:"$":0 }}</p>
+            <h3> {{oneItem.name}}</h3>
+    
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur et justo non facilisis. Sed
+                    blandit ipsum sit amet dolor pretium tempor. Mauris semper lacus turpis, sed mollis felis consequat id. Aliquam
+                    ligula leo, aliquet vel risus sed, feugiat blandit nibh. Duis quis turpis magna. Duis a arcu et magna pretium
+                    cursus vel non augue. Nullam ultrices viverra purus viverra mattis. </p>
+                    <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </li>
+                    <li>Ut varius mauris non pulvinar luctus.
+                    </li>
+                    <li>Donec sollicitudin lorem id leo varius egestas.
+                    </li>
+                    <li>Cras sit amet ante fringilla, ultrices augue id, lacinia justo.
+                    </li>
+                    <li>Phasellus ac ex feugiat, congue risus bibendum, rhoncus neque.
+                    </li>
+                </ul>
+     
+           
+
             <button ng-click="saveToCart(oneItem)" class="btn btn-warning center">Add to cart</button>
-            <button ng-click="emptyStorage()">EMPTY LOCAL STORAGE</button>
-            <button ng-click="initializeStorage()">INITIALIZE STORAGE</button>
+
         </div>
     </div>
 </div>
+
 
 
     
