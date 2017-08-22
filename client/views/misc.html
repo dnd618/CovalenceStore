@@ -4,11 +4,13 @@
 
 <div class="container">
     <div class="apps row">
-        <div ng-repeat="items in merch"class="col-md-6">
+        <div ng-repeat="items in merch" class="col-md-4 listing" ng-click="singlePath(items.id)">
             <img ng-src="../../assets/{{items.image}}">
-            <p>{{ items.name }}</p><br/>
-            <p>{{ items.price }}</p>
-            <p>in the misc page</p>
+            <br>
+            <div class="listing-text">
+                <span class="item-name">{{ items.name }}</span>
+                <span class="item-totals">{{ items.price * .01 | currency:"$":0 }}</span>
+            </div>
         </div>
     </div>
 </div>
