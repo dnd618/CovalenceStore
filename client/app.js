@@ -23,19 +23,21 @@ app.config(function($routeProvider) {
 })
     .run(function($rootScope){
         $rootScope.api = "http://iambham-store-dev.us-east-1.elasticbeanstalk.com/api/v1/";
-        $rootScope.cart = JSON.parse(localStorage.getItem('session'));
+        if($rootScope.cart === null){
+            var a = [];
+            localStorage.setItem('session', JSON.stringify(a));
+            console.log(localStorage);
+            $rootScope.cart = JSON.parse(localStorage.getItem('session'));
+        }else{
+            $rootScope.cart = JSON.parse(localStorage.getItem('session'));
+        }
         $rootScope.total = 0;
 });
     
 var filter = 'f034a4de-8143-11e7-8e40-12dbaf53d968';
 
-
-
-
-
 app.controller("HomeController", ['$rootScope', function($rootScope){
     console.log("home controller");
-    image: 'http://' + $location.host() + 'assets/covalence-store-misc-hero.jpg',
     $rootScope.hideCart = true;
     $rootScope.hideFooter = true;
 }])
@@ -99,6 +101,7 @@ app.controller("SingleController", ['$rootScope', '$http', '$scope', '$location'
 // sends items to storage
     $scope.saveToCart = function(data, item){
         $rootScope.cart.push(data);
+        console.log(data);
         localStorage.setItem('session', JSON.stringify($rootScope.cart));
         if($rootScope.total === 0){
             $rootScope.cart.forEach(function(item){
@@ -107,7 +110,7 @@ app.controller("SingleController", ['$rootScope', '$http', '$scope', '$location'
                 }
             })
         } else{
-            $rootScope.total +=item.price;
+            $rootScope.total +=data.price;
         }
     }
 }])
@@ -120,22 +123,25 @@ app.controller("ShoppingController", ['$rootScope', '$scope', '$location', funct
     console.log('in shopping cart');
     console.log($rootScope.cart);
     console.log(localStorage);
-
+    if($rootScope.cart === null){
+        return;
+    }else{
+        $rootScope.cart.forEach(function(item){
+            if(item.price !== null){
+                $rootScope.total += item.price;
+            }
+        });
+    }
     console.log($rootScope.total);
 
     $scope.checkout = function(){
         $location.path("/checkout");
     }
 
-    $scope.removeItem = function(index){
+    $scope.removeItem = function(index, data){
         $rootScope.cart.splice(index, 1);
         localStorage.setItem('session', JSON.stringify($rootScope.cart));
-        console.log(localStorage);
-        $rootScope.cart.forEach(function(item){
-            if(item.price !== null){
-                $rootScope.total -= item.price;
-            }
-        })
+        $rootScope.total -= data.price;
     }
 
 }]);

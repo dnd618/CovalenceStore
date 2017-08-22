@@ -1,13 +1,48 @@
+//  Universal styles
+@primary-font: 'Lato', serif;
+
 /* Shopping Cart  */
+.cart-wrapper{
+    position: absolute;
+    width: 100%;
+}
+// Desktop
+@media (min-width: 992px){
+ 
+}
 #shopping-cart{
     float: right;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: @primary-font;
     padding: 0px;
-    width: 400px;
+
+    .collapse {
+        visibility: hidden;
+    }
+    .collapse.in {
+        visibility: visible;
+    }
+    .collapsing {
+        position: relative;
+        height: 0;
+        overflow: hidden;
+        -webkit-transition-property: height, visibility;
+        transition-property: height, visibility;
+        -webkit-transition-duration: 0.35s;
+        transition-duration: 0.35s;
+        -webkit-transition-timing-function: ease;
+        transition-timing-function: ease;
+    }
+    .collapsing.width {
+        -webkit-transition-property: width, visibility;
+        transition-property: width, visibility;
+        width: 0;
+        height: auto;
+    }
+    img{
+        margin-top: 0;
+    }
 }
-.shopping-list>img{
-    margin-top: 0;
-}
+
 .cart-heading{
     background-color: #4CB5C6;
     height: 68px;
@@ -17,25 +52,34 @@
 }
 .panel-content{
     background-color: #f5f5f5;
-    padding: 20px;
+    padding: 25px;
 }
 .item-total{
     color: #4CB5C6;
+    text-align: right;
+    font-size: large;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-right: 25px;
 }
 
 .shopping-list{
-    height: 50px;
     margin-bottom: 15px;
 }
  .item-names{
     color: gray;
+    padding-left: 0px;
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 24px;
+
 } 
-#total-price{
+.total-price{
     display: inline;
+    font-size: x-large;
+    font-weight: bold;
 }
-.pull-right{
-    float: right;
-}
+
 .center-text{
     text-align: center;
 }
@@ -54,33 +98,9 @@
     color: red;
     background-color: white;
     border: none;
-    font-size: 10px;
+    font-size: 15px;
     padding: 6px;
     display: block;
+    margin-top: 110px;
+    font-size: 15px;
 }
-/* builds accordion */
-.collapse {
-  visibility: hidden;
-}
-.collapse.in {
-  visibility: visible;
-}
-.collapsing {
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  -webkit-transition-property: height, visibility;
-  transition-property: height, visibility;
-  -webkit-transition-duration: 0.35s;
-  transition-duration: 0.35s;
-  -webkit-transition-timing-function: ease;
-  transition-timing-function: ease;
-}
-.collapsing.width {
-  -webkit-transition-property: width, visibility;
-  transition-property: width, visibility;
-  width: 0;
-  height: auto;
-}
-
-
