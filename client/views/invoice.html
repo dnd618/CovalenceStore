@@ -2,11 +2,14 @@
     <div class="invoice-header">
     </div>
 
-    <div ng-repeat="invoice in allInvoices">
-        <img src="../assets/icon_badge.png" height="100px">
-        <h4>Order ID: {{ invoice.id }}</h4>
-        <h4>Order Total: {{ invoice.price * .01 | currency:"$":0 }}</h4>
-        <h4>Order Placed: {{ invoice.date | date: 'short'}}</h4>
+    <div class="row invoice-page">
+        <div ng-repeat="invoice in allInvoices" class="col-md-4 invoice-divs">
+            <img src="../assets/icon_badge.png" >
+                <h4>Order ID: {{ invoice.id }}</h4>
+                <h4>Order Total: {{ invoice.price * .01 | currency:"$":0 }}</h4>
+                <h4>Order Placed: {{ invoice.date | date: 'short'}}</h4>
+
+        </div>
     </div>
 
 </div>
