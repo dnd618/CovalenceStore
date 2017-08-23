@@ -1,9 +1,8 @@
-<div id="supersectionone" class="col-md-7">
+<div id="sectionone" class="col-md-7">
 <h3>1 Your Email</h3>
-<div class="form-groupone">
+<div class="form-group">
     <input type="text" class="form-control" id="useremail" placeholder="you@email.com">
 </div>
-
 <h3>2 Your Billing Address</h3>
 <form class="form-inline">
     <div class="form-group">
@@ -66,7 +65,7 @@
     </div>
 
 <div class="form-group">
-        <div class="col-sm-10">
+        <div class="col-md-10">
             <select class="form-control" id="country" name="country">
                 <option value="US">United States</option>
                 <option value="AF">Afghanistan</option>
@@ -88,7 +87,7 @@
 </form>
 
 <h3>3 Payment Method</h3>
-<div class="radio">
+<div id="CSScc" class="radio">
 <label>Credit Card</label>
 <img src="../images/american-express.png" class="img-rounded" alt="americanexpress" width="50" height="25">
 <img src="../images/discover.png" class="img-rounded" alt="discover" width="50" height="25">
@@ -98,9 +97,11 @@
 
 <div class="bs-example">
     <form>
+        <div class="container">
         <div class="form-group">
             <input type="ccard" class="form-control" id="cCard" placeholder="Card #">
         </div>
+    </div>
     </form>
 
     <form class="form-inline">
@@ -156,6 +157,11 @@
         <option value="2009">2009</option>
     </select>
     <input type="email" class="form-control" id="cscinput" placeholder="CSC">
+</br>
+    <div class="radio">
+        <img src="../images/paypal.png" class="img-rounded" alt="americanexpress" width="50" height="25">
+        <label>Pay with Paypal</label>
+    </div>
 
 </br>
 </br>
@@ -166,8 +172,8 @@
 </br>
 </br>
 </br>
-
 </div>
+
 </form>
 <h4>Almost done! Click the submit button to process your payment.</h4>
 <button type="submit" id="checkoutbutton" class="btn btn-primary">Submit Your Order</button>
@@ -176,8 +182,43 @@
 <div class="col-md-5">
 <section id="shoppingcart">
     <h1>Your Shopping Cart</h1>
+    <button type="button" id="shpcrtbtn" class="btn btn-default"><< Cancel and continue Shopping</button>
+    
+
+</br>
+</br>
+</br>
+</br>
+</br>
+
+    <div ng-controller="ShoppingController">
+            <div class="shopping-list" ng-repeat="item in cart track by $index">
+                    <div class="row">
+                        <img ng-src="../../assets/{{ item.image }}"  class="col-md-4">
+                        <span class="item-names col-md-5">{{item.name}}</span>
+                        <span class="item-total col-md-3">{{ item.price * .0100 | currency:"$":0 }}</span>
+                        <button class="item-remove" ng-click="removeItem($index, item)">Remove</button>
+                    </div>
+                </div>
+    </div>
+        
     </br>
-    <h1>Order Summary</h1>
+    </br>
+    </br>
+    </br>
+    </br>
+    
+    
+    <h1 id="ordersumCSS">Order Summary</h1>
+    <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputAmount">Discount Code</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="exampleInputAmount" placeholder="Discount Code">
+                <div class="input-group-addon">Apply</div>
+              </div>
+            </div>
+          </form>
     <p>Order Total: </h1>
 </section>
 
