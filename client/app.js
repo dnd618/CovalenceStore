@@ -75,7 +75,6 @@ app.controller("MerchandiseController", ['$rootScope', '$http', '$scope', '$loca
 app.controller("SingleController", ['$rootScope', '$http', '$scope', '$location', '$routeParams', function($rootScope, $http, $scope, $location, $routeParams){
     $rootScope.hideCart = false;
     $rootScope.hideFooter = false;
-    console.log("in single controller");
     id = $routeParams.id; 
     $http.get($rootScope.api + 'products/one/' + id,{
         headers: {
@@ -148,7 +147,21 @@ app.controller("ShoppingController", ['$rootScope', '$scope', '$location', funct
 
 
 // Checkout Controller
-app.controller("CheckoutController", ['$rootScope', function($rootScope){
+app.controller("CheckoutController", ['$rootScope', '$http', '$scope', function($rootScope, $http, $scope){
     $rootScope.hideCart = true;
     $rootScope.hideFooter = false;
+    var data = {
+        price: $rootScope.total
+    }
+     $scope.createInvoice = function(){
+        $http.post($rootScope.api + 'invoices', data,{
+            headers: {
+                'Filter': filter}
+        })
+        .then(function(response){
+            console.log(response);
+            alert('Your order has been sent!');
+        })
+    }
+
 }])
