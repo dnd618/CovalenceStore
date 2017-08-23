@@ -4,15 +4,10 @@
         <div class="col-md-6">
             <img ng-src="../../assets/{{ oneItem.image }}" class="product-image">
         </div>
-            
             <h1 class="product-price">{{ oneItem.price * .0100 | currency:"$":0 }}</h1>
             <h1 class="product-title">{{ oneItem.title }}</h1><br/>
-            <h3> {{oneItem.name}}</h3>
-    
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur et justo non facilisis. Sed
-                    blandit ipsum sit amet dolor pretium tempor. Mauris semper lacus turpis, sed mollis felis consequat id. Aliquam
-                    ligula leo, aliquet vel risus sed, feugiat blandit nibh. Duis quis turpis magna. Duis a arcu et magna pretium
-                    cursus vel non augue. Nullam ultrices viverra purus viverra mattis. </p>
+            <h3 class="single-item-name"> {{oneItem.name}}</h3>
+                <p class="item-description"> {{ oneItem.description}} </p>
                     <ul>
                     <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     </li>
@@ -25,11 +20,7 @@
                     <li>Phasellus ac ex feugiat, congue risus bibendum, rhoncus neque.
                     </li>
                 </ul>
-     
-           
-
             <button ng-click="saveToCart(oneItem)" class="btn btn-warning center">Add to cart</button>
-
         </div>
     </div>
 </div>
