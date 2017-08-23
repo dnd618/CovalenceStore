@@ -23,7 +23,7 @@ app.config(function($routeProvider) {
 })
     .run(function($rootScope){
         $rootScope.api = "http://iambham-store-dev.us-east-1.elasticbeanstalk.com/api/v1/";
-        if($rootScope.cart === null){
+        if($rootScope.cart === null || localStorage === 0){
             var a = [];
             localStorage.setItem('session', JSON.stringify(a));
             console.log(localStorage);
@@ -164,4 +164,17 @@ app.controller("CheckoutController", ['$rootScope', '$http', '$scope', function(
         })
     }
 
+}])
+
+// Invoices Controller
+app.controller("InvoiceController", ['$rootScope', '$http', '$scope', function($rootScope, $http, $scope){
+    $rootScope.hideCart = true;
+    $http.get($rootScope.api + 'invoices/all',{
+        headers: {
+            'Filter': filter}
+    })
+    .then(function(response){
+        $scope.allInvoices = response.data.data;
+        console.log($scope.allInvoices);
+    })
 }])
