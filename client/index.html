@@ -9,56 +9,62 @@
     <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
 <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet"></head>
 <body>
-    <!--NavBar-->
-    <nav class="navbar navbar-inverse fixed">
-        <ul class="nav navbar-nav">
-            <li><a href="#/"><img class="navbar-logo" src="../assets/Newlogo.png" height= "28px" width= "150px"></a></li>
-            <li><p class="bar"> | </p>
-            <li><a href="#/apparel?category=apparel">APPAREL</a></li>
-            <li><a href="#/misc?category=misc">MISC</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#/invoice" class="navbar-invoices">Invoices</a></li>
-            <li data-toggle="collapse" data-target="#shopping-cart" class="navbar-cart circle-cart"><a>Cart</a></li>
-            <li><div class="circle">{{cart.length}}</div></li>
-        </ul>
-    </nav>
-    </div>
-    <!-- Sidebar  -->
-    <div class="cart-wrapper" ng-hide="hideCart">
-        <div id='shopping-cart' class="panel panel-default collapse  width col-md-5" ng-controller="ShoppingController">
-            <div class="collapse in width">
-                <div class="cart-heading" data-toggle="collapse" data-target="#shopping-cart">
-                    <span>Close</span>
-                </div>
-                <div class="panel-content">
-                    <h3>Your Shopping Cart</h3>
-                    <div class="shopping-list" ng-repeat="item in cart track by $index">
-                        <div class="row">
-                            <img ng-src="../../assets/{{ item.image }}"  class="col-md-4">
-                            <span class="item-names col-md-5">{{item.name}}</span>
-                            <span class="item-total col-md-3">{{ item.price * .0100 | currency:"$":0 }}</span>
-                            <button class="item-remove" ng-click="removeItem($index, item)">Remove</button>
-                        </div>
+<!--NavBar-->
+<nav class="navbar navbar-inverse fixed">
+    <ul class="nav navbar-nav">
+            <!-- <a class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+              Menu
+              <span class="icon-bars-button">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </span>
+            </a> -->
+        <li><a href="#/"><img class="navbar-logo" src="../assets/Newlogo.png" height= "28px" width= "150px"></a></li>
+        <li><p class="bar"> | </p>
+        <li><a href="#/apparel?category=apparel">APPAREL</a></li>
+        <li><a href="#/misc?category=misc">MISC</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/invoice" class="navbar-invoices">Invoices</a></li>
+        <li data-toggle="collapse" data-target="#shopping-cart" class="navbar-cart circle-cart"><a>Cart</a></li>
+        <li><div class="circle">{{cart.length}}</div></li>
+    </ul>
+</nav>
+<!-- Sidebar  -->
+<div class="cart-wrapper" ng-hide="hideCart">
+    <div id='shopping-cart' class="panel panel-default collapse  width col-md-5" ng-controller="ShoppingController">
+        <div class="collapse in width">
+            <div class="cart-heading" data-toggle="collapse" data-target="#shopping-cart">
+                <span>Close</span>
+            </div>
+            <div class="panel-content">
+                <h3>Your Shopping Cart</h3>
+                <div class="shopping-list" ng-repeat="item in cart track by $index">
+                    <div class="row">
+                        <img ng-src="../../assets/{{ item.image }}"  class="col-md-4">
+                        <span class="item-names col-md-5">{{item.name}}</span>
+                        <span class="item-total col-md-3">{{ item.price * .0100 | currency:"$":0 }}</span>
+                        <button class="item-remove" ng-click="removeItem($index, item)">Remove</button>
                     </div>
-                <hr>
-                <h3 class="total-price">Total Price</h3>
-                <span class="total-price pull-right">{{ total * .01 | currency:"$":0 }}</span>
-                <p class="center-text">Taxes and fees included at checkout.</p>
-                <button id="checkout" ng-click="checkout()">Check Out</button>
                 </div>
+            <hr>
+            <h3 class="total-price">Total Price</h3>
+            <span class="total-price pull-right">{{ total * .01 | currency:"$":0 }}</span>
+            <p class="center-text">Taxes and fees included at checkout.</p>
+            <button id="checkout" ng-click="checkout()">Check Out</button>
             </div>
         </div>
     </div>
-    <div ng-view>
-    </div>    
-    <!--Footer-->
-    <!-- Move logo inside of footer -->
-    <div class="footer" ng-hide="hideFooter">
-        <footer class="panel-footer">
-            <img class="footer-logo" src="../assets/logo-footer.svg" height= "28px" width= "150px">
-                <p class="footer-text">Copyright Covalence LLC</p></footer>
-    </div>
+</div>
+<div ng-view>
+</div>    
+<!--Footer-->
+<div class="footer" ng-hide="hideFooter">
+    <footer class="panel-footer">
+        <img class="footer-logo" src="../assets/logo-footer.svg" height= "28px" width= "150px">
+            <p class="footer-text">Copyright Covalence LLC</p></footer>
+</div>
 </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
