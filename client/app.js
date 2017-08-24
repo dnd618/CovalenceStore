@@ -120,7 +120,6 @@ app.controller("ShoppingController", ['$rootScope', '$scope', '$location', funct
     $rootScope.hideCart = false;
     $rootScope.hideFooter = false;
     console.log('in shopping cart');
-    console.log($rootScope.cart.length);
     console.log(localStorage);
     if($rootScope.cart === null){
         return;

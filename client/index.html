@@ -7,8 +7,7 @@
     <title>Covalence Store</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet">
-</head>
+<link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet"></head>
 <body>
     <!--NavBar-->
     <nav class="navbar navbar-inverse fixed">
@@ -19,12 +18,15 @@
             <li><a href="#/misc?category=misc">MISC</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#/invoice">Invoices</a></li>
-            <li data-toggle="collapse" data-target="#shopping-cart"><a>Cart</a></li>
+            <li><a href="#/invoice" class="navbar-invoices">Invoices</a></li>
+                 <span class="fa-stack fa-5x has-badge" data-count="888">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bell fa-stack-1x fa-inverse"></i>
+                </span> 
+            <li data-toggle="collapse" data-target="#shopping-cart" class="navbar-cart"><a>Cart</a></li>
         </ul>
     </nav>
     </div>
-
     <!-- Sidebar  -->
     <div class="cart-wrapper" ng-hide="hideCart">
         <div id='shopping-cart' class="panel panel-default collapse in width col-md-5" ng-controller="ShoppingController">
@@ -51,15 +53,10 @@
             </div>
         </div>
     </div>
-
     <div ng-view>
-    </div>
-
-
-    
+    </div>    
     <!--Footer-->
     <!-- Move logo inside of footer -->
-
     <div class="footer" ng-hide="hideFooter">
         <footer class="panel-footer">
             <img class="footer-logo" src="../assets/logo-footer.svg" height= "28px" width= "150px">
