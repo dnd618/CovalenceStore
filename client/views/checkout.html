@@ -1,10 +1,12 @@
 <div id="cssStyle" ng-controller="CheckoutController">
     <div id="sectionone" class="col-md-7">
-    <h3>1 Your Email</h3>
+    <h3>Your Email</h3>
+    <div class="checkoutcircle">1<div>
     <div class="form-group">
         <input type="text" class="form-control" id="useremail" placeholder="you@email.com">
     </div>
-    <h3>2 Your Billing Address</h3>
+    <h3>Your Billing Address</h3>
+    <div class="checkoutcircle">2<div>
     <form class="form-inline">
         <div class="form-group">
             <label for="firstname1" id="namelabel">Name</label>
@@ -20,7 +22,6 @@
             <input type="text" class="form-control" id="inputcompany" placeholder="Company(Optional)">
         </div>
         <div class="form-group">
-            
             <input type="text" class="form-control" id="inputpass" placeholder="Phone">
         </div>
     </form>
@@ -86,7 +87,8 @@
         </div>
     </form>
 
-    <h3>3 Payment Method</h3>
+    <h3>Payment Method</h3>
+    <div class="checkoutcircle">1<div>
     <div id="CSScc" class="radio">
     <label>Credit Card</label>
     <img src="../images/american-express.png" class="img-rounded" alt="americanexpress" width="50" height="25">
@@ -106,7 +108,7 @@
 
         <form class="form-inline">
         <label for="expiration" id="expirationlabel">Expiration</label>
-        <select class="form-control" name="Day">
+        <select class="form-control" id="name" name="Day">
             <option> Day </option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -141,7 +143,7 @@
             <option value="31">31</option>
         </select>
             
-        <select class="form-control" name="Year">
+        <select class="form-control" id="year" name="Year">
             <option> Year </option>
             <option value="2020">2020</option>
             <option value="2019">2019</option>
@@ -159,8 +161,8 @@
         <input type="email" class="form-control" id="cscinput" placeholder="CSC">
     </br>
         <div class="radio">
-            <input type="checkbox">
-            <img src="../images/paypal.png" class="img-rounded" alt="americanexpress" width="50" height="25">
+            <input id="checkcheckOut" type="checkbox">
+            <img src="../images/paypal.png" class="img-rounded" alt="paypal" width="50" height="25">
             <label>Pay with Paypal</label>
         </div>
 
@@ -176,7 +178,7 @@
     </div>
 
     </form>
-    <h4>Almost done! Click the submit button to process your payment.</h4>
+    <h4 id="h4widthCSS" >Almost done! Click the submit button to process your payment.</h4>
     <button type="submit" id="checkoutbutton" class="btn btn-primary" ng-click="createInvoice()">Submit Your Order</button>
     </div>
 
