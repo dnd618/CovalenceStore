@@ -18,7 +18,10 @@ app.config(function($routeProvider) {
         templateUrl: "../client/views/single.html",
     })
     .when("/invoice", {
-        templateUrl: "../client/views/invoice.html"
+        templateUrl: "../client/views/invoice.html",
+    })
+    .when("/thanks", {
+        templateUrl: "../client/views/thanks.html",
     });
 })
     .run(function($rootScope){
@@ -120,7 +123,6 @@ app.controller("ShoppingController", ['$rootScope', '$scope', '$location', funct
     $rootScope.hideCart = false;
     $rootScope.hideFooter = false;
     console.log('in shopping cart');
-    console.log(localStorage);
     if($rootScope.cart === null){
         return;
     }else{
@@ -141,27 +143,28 @@ app.controller("ShoppingController", ['$rootScope', '$scope', '$location', funct
         localStorage.setItem('session', JSON.stringify($rootScope.cart));
         $rootScope.total -= data.price;
     }
-
 }]);
 
 
 // Checkout Controller
-app.controller("CheckoutController", ['$rootScope', '$http', '$scope', function($rootScope, $http, $scope){
+app.controller("CheckoutController", ['$rootScope', '$http', '$scope', '$location', function($rootScope, $http, $scope, $location){
     $rootScope.hideCart = true;
     $rootScope.hideFooter = false;
     var data = {
         price: $rootScope.total
     }
-     $scope.createInvoice = function(){
+    $scope.createInvoice = function(){
         $http.post($rootScope.api + 'invoices', data,{
             headers: {
                 'Filter': filter}
         })
-        .then(function(response){
-            console.log(response);
-            alert('Your order has been sent!');
+        .then(function(){
+            $location.path('/thanks');
+            localStorage.clear();
+            $rootScope.cart = [];
         })
     }
+
 
 }])
 
