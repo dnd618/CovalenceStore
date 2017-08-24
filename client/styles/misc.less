@@ -37,6 +37,9 @@
 }
 // Mobile Misc Style
 @media (max-width: 991px){
+    .listing{
+        width: 100%;
+    }
     .container{
         text-align: center;
     }
@@ -50,11 +53,24 @@
         }
 
     }
+    .invoice-header{
+        height: 250px;
+        margin-top: -5em;
+        background-position-x: 0;
+        background-position-y: 0;
+    }
 }
 
 // tablet Misc Style
-@media (max-width: 1199px){
+@media (min-width: 992px){
     .listing{
         width: 40%;
+    }
+}
+
+//Desktop Misc Style
+@media (min-width: 1200px){
+    .listing{
+        width: 33.33333333%
     }
 }
