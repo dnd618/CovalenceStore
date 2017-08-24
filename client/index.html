@@ -20,15 +20,14 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="#/invoice">Invoices</a></li>
-                <span class="fa-stack fa-5x has-badge" data-count="888">
+                <!-- <span class="fa-stack fa-5x has-badge" data-count="888">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-bell fa-stack-1x fa-inverse"></i>
-                </span>
+                </span> -->
             <li data-toggle="collapse" data-target="#shopping-cart"><a>Cart</a></li>
         </ul>
     </nav>
     </div>
-
     <!-- Sidebar  -->
     <div class="cart-wrapper" ng-hide="hideCart">
         <div id='shopping-cart' class="panel panel-default collapse in width col-md-5" ng-controller="ShoppingController">
@@ -55,15 +54,10 @@
             </div>
         </div>
     </div>
-
     <div ng-view>
-    </div>
-
-
-    
+    </div>    
     <!--Footer-->
     <!-- Move logo inside of footer -->
-
     <div class="footer" ng-hide="hideFooter">
         <footer class="panel-footer">
             <img class="footer-logo" src="../assets/logo-footer.svg" height= "28px" width= "150px">
