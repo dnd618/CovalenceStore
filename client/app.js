@@ -29,7 +29,6 @@ app.config(function($routeProvider) {
         if($rootScope.cart === null || localStorage === 0){
             var a = [];
             localStorage.setItem('session', JSON.stringify(a));
-            console.log(localStorage);
             $rootScope.cart = JSON.parse(localStorage.getItem('session'));
         }else{
             $rootScope.cart = JSON.parse(localStorage.getItem('session'));
@@ -40,7 +39,6 @@ app.config(function($routeProvider) {
 var filter = 'f034a4de-8143-11e7-8e40-12dbaf53d968';
 
 app.controller("HomeController", ['$rootScope', function($rootScope){
-    console.log("home controller");
     $rootScope.hideCart = true;
     $rootScope.hideFooter = true;
 }])
@@ -48,24 +46,19 @@ app.controller("HomeController", ['$rootScope', function($rootScope){
 app.controller("MerchandiseController", ['$rootScope', '$http', '$scope', '$location', function($rootScope, $http, $scope, $location){
     $rootScope.hideCart = false;
     $rootScope.hideFooter = false;
-    console.log('in merch controller');
     var category = $location.search().category;
-    console.log(category);
-     $scope.merch = [];
+    $scope.merch = [];
     $http.get($rootScope.api + 'products/all',{
         headers: {
             'Filter': filter}
     })
     .then(function(response){
-        console.log(response.data.data);
         $scope.merchandise = response.data.data;
         $scope.merchandise.forEach(function(data){
             if(data.category == category){
-                console.log(data);
                 $scope.merch.push(data);
             }
         })
-        console.log($scope.merch);
     })
     .catch(function(error){
         alert('Uh oh! Please refresh the page.');
@@ -85,25 +78,10 @@ app.controller("SingleController", ['$rootScope', '$http', '$scope', '$location'
         })
         .then(function(response){
             $scope.oneItem = response.data.data;
-            console.log($scope.oneItem);
         })
-
-
- // for initializing localstorage 
-    $scope.emptyStorage = function(){
-        localStorage.clear();
-        console.log('clicked');
-        console.log(localStorage);
-    };
-    $scope.initializeStorage = function(){
-        var a = [];
-        localStorage.setItem('session', JSON.stringify(a));
-        console.log(localStorage);
-    }
 // sends items to storage
     $scope.saveToCart = function(data, item){
         $rootScope.cart.push(data);
-        console.log(data);
         localStorage.setItem('session', JSON.stringify($rootScope.cart));
         if($rootScope.total === 0){
             $rootScope.cart.forEach(function(item){
@@ -122,7 +100,6 @@ app.controller("SingleController", ['$rootScope', '$http', '$scope', '$location'
 app.controller("ShoppingController", ['$rootScope', '$scope', '$location', function($rootScope, $scope, $location) {
     $rootScope.hideCart = false;
     $rootScope.hideFooter = false;
-    console.log('in shopping cart');
     if($rootScope.cart === null){
         return;
     }else{
@@ -132,7 +109,6 @@ app.controller("ShoppingController", ['$rootScope', '$scope', '$location', funct
             }
         });
     }
-    console.log($rootScope.total);
 
     $scope.checkout = function(){
         $location.path("/checkout");
@@ -162,6 +138,7 @@ app.controller("CheckoutController", ['$rootScope', '$http', '$scope', '$locatio
             $location.path('/thanks');
             localStorage.clear();
             $rootScope.cart = [];
+            $rootScope.total = 0;
         })
     }
 
@@ -177,6 +154,5 @@ app.controller("InvoiceController", ['$rootScope', '$http', '$scope', function($
     })
     .then(function(response){
         $scope.allInvoices = response.data.data;
-        console.log($scope.allInvoices);
     })
 }])
