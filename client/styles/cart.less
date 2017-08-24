@@ -49,34 +49,33 @@
     font-family: @primary-font;
     padding: 0px;
 
-    .collapse {
-        visibility: hidden;
-    }
-    .collapse.in {
-        visibility: visible;
-    }
-    .collapsing {
-        position: relative;
-        height: 0;
-        overflow: hidden;
-        -webkit-transition-property: height, visibility;
-        transition-property: height, visibility;
-        -webkit-transition-duration: 0.35s;
-        transition-duration: 0.35s;
-        -webkit-transition-timing-function: ease;
-        transition-timing-function: ease;
-    }
-    .collapsing.width {
-        -webkit-transition-property: width, visibility;
-        transition-property: width, visibility;
-        width: 0;
-        height: auto;
-    }
     img{
         margin-top: 0;
     }
 }
-
+.collapse {
+    visibility: hidden;
+}
+.collapse.in {
+    visibility: visible;
+}
+.collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition-property: height, visibility;
+    transition-property: height, visibility;
+    -webkit-transition-duration: 0.35s;
+    transition-duration: 0.35s;
+    -webkit-transition-timing-function: ease;
+    transition-timing-function: ease;
+}
+.collapsing.width {
+    -webkit-transition-property: width, visibility;
+    transition-property: width, visibility;
+    width: 0;
+    height: auto;
+}
 .cart-heading{
     background-color: #4CB5C6;
     height: 68px;
