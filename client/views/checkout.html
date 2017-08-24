@@ -1,225 +1,225 @@
-<div id="sectionone" class="col-md-7">
-<h3>1 Your Email</h3>
-<div class="form-group">
-    <input type="text" class="form-control" id="useremail" placeholder="you@email.com">
-</div>
-<h3>2 Your Billing Address</h3>
-<form class="form-inline">
+<div id="cssStyle" ng-controller="CheckoutController">
+    <div id="sectionone" class="col-md-7">
+    <h3>1 Your Email</h3>
     <div class="form-group">
-        <label for="firstname1" id="namelabel">Name</label>
-        <input type="text" class="form-control" id="firstname1" placeholder="First">
+        <input type="text" class="form-control" id="useremail" placeholder="you@email.com">
     </div>
-    <div class="form-group">
-        <input type="text" class="form-control" id="lastname1" placeholder="Last">
-    </div>
-</form>
-
-<form class="form-inline">
-    <div class="form-group">
-        <input type="text" class="form-control" id="inputcompany" placeholder="Company(Optional)">
-    </div>
-    <div class="form-group">
-        <label class="sr-only" for="inputpass">Password</label>
-        <input type="text" class="form-control" id="inputpass" placeholder="Phone">
-    </div>
-</form>
-
-</br>
-
-<form class="form-inline">
-    <div class="form-group">
-        <label for="adress1" id="addresslabel">Address</label>
-        <input type="text" class="form-control" id="address1" placeholder="Address 1">
-    </div>
-    <div class="form-group">
-        <label class="sr-only" for="address2">Password</label>
-        <input type="text" class="form-control" id="address2" placeholder="Address 2(Optional)">
-    </div>
-</form>
-        
-<form class="form-inline">
-    <div class="form-group">
-    <input type="text" class="form-control" id="cityinput" placeholder="City">
-</div>
-<div class="form-group">
-    <div class="col-sm-10">
-        <select class="form-control" id="state" name="state">
-            <option value="AL">Alabama</option>
-            <option value="AR">Arkansas</option>
-            <option value="FL">Florida</option>
-            <option value="GA">Georgia</option>
-            <option value="KY">Kentucky</option>
-            <option value="LA">Louisiana</option>
-            <option value="MO">Missouri</option>
-            <option value="MS">Mississippi</option>
-            <option value="SC">South Carolina</option>
-            <option value="TN">Tennessee</option>
-        </select>
-    </div>
-</div>
-</form>
-
-<form class="form-inline">
-    <div class="form-group">
-        <input type="text" class="form-control" id="zipcode" placeholder="Zip Code">
-    </div>
-
-<div class="form-group">
-        <div class="col-md-10">
-            <select class="form-control" id="country" name="country">
-                <option value="US">United States</option>
-                <option value="AF">Afghanistan</option>
-                <option value="AX">Åland Islands</option>
-                <option value="AL">Albania</option>
-                <option value="DZ">Algeria</option>
-                <option value="AS">American Samoa</option>
-                <option value="AD">Andorra</option>
-                <option value="AO">Angola</option>
-                <option value="AI">Anguilla</option>
-                <option value="AQ">Antarctica</option>
-                <option value="AG">Antigua and Barbuda</option>
-                <option value="AR">Argentina</option>
-                <option value="AM">Armenia</option>
-                <option value="AW">Aruba</option>
-            </select>
-        </div>
-    </div>
-</form>
-
-<h3>3 Payment Method</h3>
-<div id="CSScc" class="radio">
-<label>Credit Card</label>
-<img src="../images/american-express.png" class="img-rounded" alt="americanexpress" width="50" height="25">
-<img src="../images/discover.png" class="img-rounded" alt="discover" width="50" height="25">
-<img src="../images/mastercard.png" class="img-rounded" alt="mastercard" width="50" height="25">
-<img src="../images/visa.png" class="img-rounded" alt="visa" width="50" height="25">
-</div>
-
-<div class="bs-example">
-    <form>
-        <div class="container">
+    <h3>2 Your Billing Address</h3>
+    <form class="form-inline">
         <div class="form-group">
-            <input type="ccard" class="form-control" id="cCard" placeholder="Card #">
+            <label for="firstname1" id="namelabel">Name</label>
+            <input type="text" class="form-control" id="firstname1" placeholder="First">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="lastname1" placeholder="Last">
+        </div>
+    </form>
+
+    <form class="form-inline">
+        <div class="form-group">
+            <input type="text" class="form-control" id="inputcompany" placeholder="Company(Optional)">
+        </div>
+        <div class="form-group">
+            
+            <input type="text" class="form-control" id="inputpass" placeholder="Phone">
+        </div>
+    </form>
+
+    </br>
+
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="adress1" id="addresslabel">Address</label>
+            <input type="text" class="form-control" id="address1" placeholder="Address 1">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="address2" placeholder="Address 2(Optional)">
+        </div>
+    </form>
+            
+    <form class="form-inline">
+        <div class="form-group">
+        <input type="text" class="form-control" id="cityinput" placeholder="City">
+    </div>
+    <div class="form-group">
+        <div class="col-md-12">
+            <select class="form-control" id="state" name="state">
+                <option value="AL">Alabama</option>
+                <option value="AR">Arkansas</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="MO">Missouri</option>
+                <option value="MS">Mississippi</option>
+                <option value="SC">South Carolina</option>
+                <option value="TN">Tennessee</option>
+            </select>
         </div>
     </div>
     </form>
 
     <form class="form-inline">
-    <label for="expiration" id="expirationlabel">Expiration</label>
-    <select class="form-control" name="Day">
-        <option> Day </option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-        <option value="13">13</option>
-        <option value="14">14</option>
-        <option value="15">15</option>
-        <option value="16">16</option>
-        <option value="17">17</option>
-        <option value="18">18</option>
-        <option value="19">19</option>
-        <option value="20">20</option>
-        <option value="21">21</option>
-        <option value="22">22</option>
-        <option value="23">23</option>
-        <option value="24">24</option>
-        <option value="25">25</option>
-        <option value="26">26</option>
-        <option value="27">27</option>
-        <option value="28">28</option>
-        <option value="29">29</option>
-        <option value="30">30</option>
-        <option value="31">31</option>
-    </select>
-        
-    <select class="form-control" name="Year">
-        <option> Year </option>
-        <option value="2020">2020</option>
-        <option value="2019">2019</option>
-        <option value="2018">2018</option>
-        <option value="2017">2017</option>
-        <option value="2016">2016</option>
-        <option value="2015">2015</option>
-        <option value="2014">2014</option>
-        <option value="2013">2013</option>
-        <option value="2012">2012</option>
-        <option value="2011">2011</option>
-        <option value="2010">2010</option>
-        <option value="2009">2009</option>
-    </select>
-    <input type="email" class="form-control" id="cscinput" placeholder="CSC">
-</br>
-    <div class="radio">
-        <img src="../images/paypal.png" class="img-rounded" alt="americanexpress" width="50" height="25">
-        <label>Pay with Paypal</label>
-    </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="zipcode" placeholder="Zip Code">
+        </div>
 
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</div>
-
-</form>
-<h4>Almost done! Click the submit button to process your payment.</h4>
-<button type="submit" id="checkoutbutton" class="btn btn-primary">Submit Your Order</button>
-</div>
-
-<div class="col-md-5">
-<section id="shoppingcart">
-    <h1>Your Shopping Cart</h1>
-    <button type="button" id="shpcrtbtn" class="btn btn-default"><< Cancel and continue Shopping</button>
-    
-
-</br>
-</br>
-</br>
-</br>
-</br>
-
-    <div ng-controller="ShoppingController">
-            <div class="shopping-list" ng-repeat="item in cart track by $index">
-                    <div class="row">
-                        <img ng-src="../../assets/{{ item.image }}"  class="col-md-4">
-                        <span class="item-names col-md-5">{{item.name}}</span>
-                        <span class="item-total col-md-3">{{ item.price * .0100 | currency:"$":0 }}</span>
-                        <button class="item-remove" ng-click="removeItem($index, item)">Remove</button>
-                    </div>
-                </div>
-    </div>
-        
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    
-    
-    <h1 id="ordersumCSS">Order Summary</h1>
-    <form class="form-inline">
-            <div class="form-group">
-              <label class="sr-only" for="exampleInputAmount">Discount Code</label>
-              <div class="input-group">
-                <input type="text" class="form-control" id="exampleInputAmount" placeholder="Discount Code">
-                <div class="input-group-addon">Apply</div>
-              </div>
+    <div class="form-group">
+            <div class="col-md-12">
+                <select class="form-control" id="country" name="country">
+                    <option value="US">United States</option>
+                    <option value="AF">Afghanistan</option>
+                    <option value="AX">Åland Islands</option>
+                    <option value="AL">Albania</option>
+                    <option value="DZ">Algeria</option>
+                    <option value="AS">American Samoa</option>
+                    <option value="AD">Andorra</option>
+                    <option value="AO">Angola</option>
+                    <option value="AI">Anguilla</option>
+                    <option value="AQ">Antarctica</option>
+                    <option value="AG">Antigua and Barbuda</option>
+                    <option value="AR">Argentina</option>
+                    <option value="AM">Armenia</option>
+                    <option value="AW">Aruba</option>
+                </select>
             </div>
-          </form>
-    <p>Order Total: </h1>
-</section>
+        </div>
+    </form>
 
+    <h3>3 Payment Method</h3>
+    <div id="CSScc" class="radio">
+    <label>Credit Card</label>
+    <img src="../images/american-express.png" class="img-rounded" alt="americanexpress" width="50" height="25">
+    <img src="../images/discover.png" class="img-rounded" alt="discover" width="50" height="25">
+    <img src="../images/mastercard.png" class="img-rounded" alt="mastercard" width="50" height="25">
+    <img src="../images/visa.png" class="img-rounded" alt="visa" width="50" height="25">
+    </div>
+
+    <div class="bs-example">
+        <form>
+            <div class="container">
+            <div class="form-group">
+                <input type="ccard" class="form-control" id="cCard" placeholder="Card #">
+            </div>
+        </div>
+        </form>
+
+        <form class="form-inline">
+        <label for="expiration" id="expirationlabel">Expiration</label>
+        <select class="form-control" name="Day">
+            <option> Day </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+        </select>
+            
+        <select class="form-control" name="Year">
+            <option> Year </option>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
+            <option value="2015">2015</option>
+            <option value="2014">2014</option>
+            <option value="2013">2013</option>
+            <option value="2012">2012</option>
+            <option value="2011">2011</option>
+            <option value="2010">2010</option>
+            <option value="2009">2009</option>
+        </select>
+        <input type="email" class="form-control" id="cscinput" placeholder="CSC">
+    </br>
+        <div class="radio">
+            <input type="checkbox">
+            <img src="../images/paypal.png" class="img-rounded" alt="americanexpress" width="50" height="25">
+            <label>Pay with Paypal</label>
+        </div>
+
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </div>
+
+    </form>
+    <h4>Almost done! Click the submit button to process your payment.</h4>
+    <button type="submit" id="checkoutbutton" class="btn btn-primary" ng-click="createInvoice()">Submit Your Order</button>
+    </div>
+
+    <div id="sectiontwo" class="col-md-5">
+    <section id="shoppingcart">
+        <h1 id="SCcss">Your Shopping Cart</h1>
+        <button type="button" id="shpcrtbtn" class="btn btn-default"><< Cancel and continue Shopping</button>
+        
+
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+
+        <div >
+                <div class="shopping-list" ng-repeat="item in cart track by $index">
+                        <div class="row">
+                            <img ng-src="../../assets/{{ item.image }}"  class="col-md-4">
+                            <span class="item-names col-md-5">{{item.name}}</span>
+                            <span class="item-total col-md-3">{{ item.price * .0100 | currency:"$":0 }}</span>
+                            <button class="item-remove" ng-click="removeItem($index, item)">Remove</button>
+                        </div>
+                    </div>
+        </div>
+            
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        
+        
+        <h1 id="ordersumCSS">Order Summary</h1>
+        <form class="form-inline">
+            <div class="form-group">
+                <input type="email" class="form-control" id="discountcodeCss" placeholder="Discount Code">
+            </div>
+            <button type="submit" class="btn">Apply</button>
+        </form>
+        <h3 class="total-price pull-right">Order Total: {{ total * .01 | currency:"$":0 }}</h3>
+        
+    </section>
+
+    </div>
 </div>
