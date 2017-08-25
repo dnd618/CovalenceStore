@@ -144,7 +144,11 @@ app.controller("CheckoutController", ['$rootScope', '$http', '$scope', '$locatio
             $rootScope.total = 0;
         })
     }
-    
+    $scope.removeItem = function(index, data){
+        $rootScope.cart.splice(index, 1);
+        localStorage.setItem('session', JSON.stringify($rootScope.cart));
+        $rootScope.total -= data.price;
+    }
    
     var cat = document.getElementById("cscinput");
     cat.addEventListener("click", function(){
