@@ -26,13 +26,13 @@ app.config(function($routeProvider) {
 })
     .run(function($rootScope){
         $rootScope.api = "http://iambham-store-dev.us-east-1.elasticbeanstalk.com/api/v1/";
-        if($rootScope.cart === null || localStorage === 0){
+        if($rootScope.cart === null || localStorage === 0 || localStorage.length === 1){
             var a = [];
             localStorage.setItem('session', JSON.stringify(a));
-            $rootScope.cart = JSON.parse(localStorage.getItem('session'));
         }else{
             $rootScope.cart = JSON.parse(localStorage.getItem('session'));
         }
+        $rootScope.cart = JSON.parse(localStorage.getItem('session'));
         $rootScope.total = 0;
 });
     
@@ -81,6 +81,9 @@ app.controller("SingleController", ['$rootScope', '$http', '$scope', '$location'
         })
 // sends items to storage
     $scope.saveToCart = function(data, item){
+        console.log(data);
+        console.log($rootScope.cart);
+        console.log(localStorage);
         $rootScope.cart.push(data);
         localStorage.setItem('session', JSON.stringify($rootScope.cart));
         if($rootScope.total === 0){
@@ -92,6 +95,7 @@ app.controller("SingleController", ['$rootScope', '$http', '$scope', '$location'
         } else{
             $rootScope.total +=data.price;
         }
+     
     }
 }])
 
@@ -177,20 +181,24 @@ app.factory("myFac", function() {
                 }
             });
             
-            if(brand === "discover"){
-                console.log("This is a discover");
-            } else if(brand === "visa"){
-                console.log("this is a visa");
-                var visa = document.getElementById("visa-img");
-                $(visa).css("border", "4px yellow solid");
-            } else if(brand === "amex"){
-                var amex = document.getElementById("amex");
-                $(amex).css("border", "4px yellow solid")
-                console.log("this is amex");
-            } else if(brand === "mastercard"){
-                console.log("this is a mastercard");
-            }
-    }
+    if(brand === "discover"){
+                    console.log("This is a discover");
+                    var discover = document.getElementById("discover");
+                    $(discover).css("border", "2px yellow solid")
+                } else if(brand === "visa"){
+                    console.log("this is a visa");
+                    var visa = document.getElementById("visa");
+                    $(visa).css("border", "2px yellow solid");
+                } else if(brand === "amex"){
+                    var amex = document.getElementById("amex");
+                    $(amex).css("border", "2px yellow solid")
+                    console.log("this is amex");
+                } else if(brand === "mastercard"){
+                    console.log("this is a mastercard");
+                    var mastercard = document.getElementById("mastercard");
+                    $(mastercard).css("border", "2px yellow solid")
+                }
+        }
     return fac;
 })
 
