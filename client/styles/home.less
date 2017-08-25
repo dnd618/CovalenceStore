@@ -179,15 +179,32 @@ li:hover {
     margin-left: 0px;
 }
 /******Hamburger menu when screen minized*****/
-// .dropdown-toggle .icon-bars-button{
-//   display: inline-block;
-//   vertical-align:middle;
-// }
-// .dropdown-toggle .icon-bar {
-//   margin-bottom:2px;
-//   display: block;
-//   width: 22px;
-//   height: 2px;
-//   background-color: #cccccc;
-//   border-radius: 1px;
-// }
+@media (max-width: 767px){
+    #hamburger{
+        visibility: visible;
+    }
+    #regCart{
+        visibility: hidden;
+    }
+    .navbar-invoices{
+        text-transform: uppercase;
+    }
+    .circle-cart{
+        text-transform: uppercase;
+    }
+}
+@media (min-width: 768px){
+    #hamburger{
+        visibility: hidden;
+    }
+    #regCart{
+        visibility: visible;
+    }
+    #myNavBar{
+        visibility: hidden;
+    }
+}
+
+#hamburger{
+    margin-top: -24em;
+}
