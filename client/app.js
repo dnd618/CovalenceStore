@@ -26,12 +26,6 @@ app.config(function($routeProvider) {
 })
     .run(function($rootScope){
         $rootScope.api = "http://iambham-store-dev.us-east-1.elasticbeanstalk.com/api/v1/";
-        if($rootScope.cart === null || localStorage === 0 || localStorage.length === 1){
-            var a = [];
-            localStorage.setItem('session', JSON.stringify(a));
-        }else{
-            $rootScope.cart = JSON.parse(localStorage.getItem('session'));
-        }
         $rootScope.cart = JSON.parse(localStorage.getItem('session'));
         $rootScope.total = 0;
 });
@@ -84,6 +78,11 @@ app.controller("SingleController", ['$rootScope', '$http', '$scope', '$location'
         console.log(data);
         console.log($rootScope.cart);
         console.log(localStorage);
+        if($rootScope.cart === null){
+            var a = [];
+            localStorage.setItem('session', JSON.stringify(a));
+            $rootScope.cart = JSON.parse(localStorage.getItem('session'));
+        }
         $rootScope.cart.push(data);
         localStorage.setItem('session', JSON.stringify($rootScope.cart));
         if($rootScope.total === 0){
@@ -145,6 +144,7 @@ app.controller("CheckoutController", ['$rootScope', '$http', '$scope', '$locatio
             $rootScope.total = 0;
         })
     }
+    
    
     var cat = document.getElementById("cscinput");
     cat.addEventListener("click", function(){
