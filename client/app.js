@@ -149,6 +149,9 @@ app.controller("CheckoutController", ['$rootScope', '$http', '$scope', '$locatio
         localStorage.setItem('session', JSON.stringify($rootScope.cart));
         $rootScope.total -= data.price;
     }
+    $scope.leaveCheckout = function(){
+        $location.path("/apparel");
+    }
    
     var cat = document.getElementById("cscinput");
     cat.addEventListener("click", function(){
