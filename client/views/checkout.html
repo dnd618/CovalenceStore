@@ -89,15 +89,16 @@
 
     <span id="circleCSS">3</span>
     <h4>Payment Method</h4>
+    <div class="bs-example">
     <div id="CSScc" class="radio">
     <label>Credit Card</label>
-    <img src="../images/american-express.png" class="img-rounded" alt="americanexpress" width="50" height="25">
+    <img id="amex" src="../images/american-express.png" class="img-rounded" alt="americanexpress" width="50" height="25">
     <img src="../images/discover.png" class="img-rounded" alt="discover" width="50" height="25">
     <img src="../images/mastercard.png" class="img-rounded" alt="mastercard" width="50" height="25">
     <img src="../images/visa.png" class="img-rounded" alt="visa" width="50" height="25">
     </div>
 
-    <div class="bs-example">
+    
         <form>
             <div class="container">
             <div class="form-group">
@@ -108,7 +109,7 @@
 
         <form class="form-inline">
         <label for="expiration" id="expirationlabel">Expiration</label>
-        <select class="form-control" id="name" name="Day">
+        <select class="form-control" id="name" name="month" >
             <option> Day </option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -122,25 +123,6 @@
             <option value="10">10</option>
             <option value="11">11</option>
             <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-            <option value="17">17</option>
-            <option value="18">18</option>
-            <option value="19">19</option>
-            <option value="20">20</option>
-            <option value="21">21</option>
-            <option value="22">22</option>
-            <option value="23">23</option>
-            <option value="24">24</option>
-            <option value="25">25</option>
-            <option value="26">26</option>
-            <option value="27">27</option>
-            <option value="28">28</option>
-            <option value="29">29</option>
-            <option value="30">30</option>
-            <option value="31">31</option>
         </select>
             
         <select class="form-control" id="year" name="Year">
@@ -158,7 +140,7 @@
             <option value="2010">2010</option>
             <option value="2009">2009</option>
         </select>
-        <input type="email" class="form-control" id="cscinput" placeholder="CSC">
+        <input type="email" class="form-control" id="cscinput" placeholder="CVC">
     </br>
         <div class="radio">
             <input id="checkcheckOut" type="checkbox">
